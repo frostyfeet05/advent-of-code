@@ -2,8 +2,8 @@ const input = '';
 
 processInput = (input) => {
     return input.split('\n').map(line => {
-        const [p1, p2] = line.split(' -> ').map(x => x.split(','));
-        return {x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1]};
+        const [[x1, y1], [x2, y2]] = line.split(' -> ').map(x => x.split(','));
+        return {x1, y1, x2, y2};
     });
 }
 

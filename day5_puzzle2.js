@@ -2,8 +2,8 @@ const input = '';
 
 processInput = (input) => {
     return input.split('\n').map(line => {
-        const [p1, p2] = line.split(' -> ').map(x => x.split(','));
-        return {x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1]};
+        const [[x1, y1], [x2, y2]] = line.split(' -> ').map(x => x.split(','));
+        return {x1, y1, x2, y2};
     });
 }
 
@@ -17,7 +17,6 @@ interpolate = (line) => {
         const x = interpolateArray(line.x1, line.x2);
         const y = interpolateArray(line.y1, line.y2);
         points = x.map((v, i) => `${v},${y[i]}`);
-        console.log(points);
     }
     return points;
 }
