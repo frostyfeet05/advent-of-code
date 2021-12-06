@@ -1,13 +1,13 @@
 const input = '';
 
-processInput = (input) => {
+const processInput = (input) => {
     return input.split('\n').map(line => {
         const [[x1, y1], [x2, y2]] = line.split(' -> ').map(x => x.split(','));
         return {x1, y1, x2, y2};
     });
 }
 
-interpolate = (line) => {
+const interpolate = (line) => {
     let points = [];
     if (line.x1 === line.x2) {
         points = interpolateArray(line.y1, line.y2).map(y => `${line.x1},${y}`);
@@ -21,25 +21,25 @@ interpolate = (line) => {
     return points;
 }
 
-interpolateArray = (from, to) => {
+const interpolateArray = (from, to) => {
     const length = Math.abs(to - from) + 1;
     const startAt = Math.min(from, to);
     let range = Array.from({length}, (x, i) => startAt + i);
-    if (to < from) {
+    if (parseInt(to) < parseInt(from)) {
         range = range.reverse();
     }
     return range;
 }
 
-doPuzzle = (input) => {
+const doPuzzle = (input) => {
     const lines = processInput(input);
-    const result = [];
 
-    lines.forEach(line => result.push(...interpolate(line)));
+    const points = lines.map(line => interpolate(line)).flat();
 
-    return Object.values(result.reduce((prev, cur) => (prev[cur] = prev[cur] + 1 || 1, prev), []))
-        .filter(p => p > 1)
-        .length;
+    const result = Object.values(points.reduce((prev, cur) => (prev[cur] = prev[cur] + 1 || 1, prev), []))
+        .filter(p => p > 1);
+
+    return result.length;
 }
 
 const result = doPuzzle(input);
