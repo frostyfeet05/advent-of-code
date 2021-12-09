@@ -97,12 +97,12 @@ const calculateSignal = (line: Line): number => {
     return parseInt(result);
 };
 
-const doPuzzle = (input: string): number => {
+const solve = (input: string): number => {
     const lines = processInput(input);
     return lines.map(calculateSignal).reduce((a, b) => a + b);
 };
 
-const result = doPuzzle(input);
+const result = solve(input);
 console.log(`Result is ${result}`);
 
 export {};
