@@ -1,46 +1,62 @@
 const input = ``;
 
-type Graph = { [key: string]: Set<string> };
+type Graph = [from: string, to: string][];
+type Path = string[];
 
 const Graph = {
     parse(input: string): Graph {
-        const graph: Graph = {};
-        input.split('\n').forEach(line => {
+        return input.split('\n').map(line => {
             const [from, to] = line.split('-');
-            graph[from] = (graph[from] || new Set<string>()).add(to);
-            graph[to] = (graph[to] || new Set<string>()).add(from);
+            return [from, to];
         });
-        return graph;
     }
 };
 
-const processInput = (input: string): Graph => {
-    return Graph.parse(input);
+const isValidPath = (path: Path): boolean => {
+    const smallCaves = path
+        .filter(segment => segment !== 'start')
+        .filter(segment => segment !== 'end')
+        .filter(segment => segment.toLowerCase() === segment);
+
+    // small caves must be unique
+    const caveTest = new Set<string>(smallCaves);
+    return smallCaves.length === caveTest.size;
+}
+
+const findPathSegment = (searchFrom: string, graph: Graph): string[] => {
+    const froms = graph
+        .filter(([from, _]) => searchFrom === from)
+        .map(([_, to]) => to);
+
+    const tos = graph
+        .filter(([_, to]) => searchFrom === to)
+        .map(([from, _]) => from);
+
+    const possibleSegments = [...froms, ...tos].filter(segment => segment !== 'start');
+    return possibleSegments;
 };
 
-const isLargeCave = (cave: string): boolean => {
-    return cave[0].toLowerCase() !== cave[0];
-};
+const findPath = (searchFrom: string, searchTo: string, graph: Graph, path: string[]): Path[] => {
+    const newPath = [...path, searchFrom];
 
-const findPath = (from: string, to: string, path: string[], graph: Graph): string[] => {
-    const newPath: string[] = [...path];
-    newPath.push(from);
-
-    if (from === to) {
-        return newPath;
+    // end of recursion #1: end has been reached
+    if (searchFrom === searchTo) {
+        return [newPath];
     }
 
-    const caves: string[] = Array.from(graph[from]).filter(cave => isLargeCave(cave) || !newPath.includes(cave));
-    caves.map(cave => findPath(cave, to, newPath, graph)).forEach(caves => newPath.push(...caves))
+    const pathSegments = findPathSegment(searchFrom, graph)
+        .filter(segment => isValidPath([...newPath, segment]));
 
-    return newPath;
-};
+    return pathSegments.flatMap(newFrom => findPath(newFrom, searchTo, graph, [...newPath]));
+}
 
 const solve = (input: string): number => {
-    const graph: Graph = processInput(input);
+    const graph: Graph = Graph.parse(input);
 
-    const paths: string[] = findPath('start', 'end', [], graph);
-    return paths.filter(cave => cave === 'end').length;
+    const paths: Path[] = findPath('start', 'end', graph, []);
+    console.log(paths);
+
+    return paths.length;
 };
 
 const result = solve(input);
