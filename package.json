@@ -18,11 +18,12 @@
   "author": "frostyfeet05",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/frostyfeet05/advent-of-code-2021/issues"
+    "url": "https://github.com/frostyfeet05/advent-of-code/issues"
   },
-  "homepage": "https://github.com/frostyfeet05/advent-of-code-2021#readme",
+  "homepage": "https://github.com/frostyfeet05/advent-of-code#readme",
   "dependencies": {
     "@types/node": "^16.11.12",
+    "priorityqueuejs": "^2.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
