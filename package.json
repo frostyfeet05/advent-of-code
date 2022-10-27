@@ -4,7 +4,9 @@
   "description": "Collection of Advent of Code solutions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new": "./scripts/new.sh",
+    "challenge": "./scripts/run.sh"
   },
   "repository": {
     "type": "git",
