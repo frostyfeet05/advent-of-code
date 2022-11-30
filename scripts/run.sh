@@ -1,2 +1,3 @@
 #!/bin/bash
-npx ts-node "./year/$1/day/$2/puzzle/$3/index.ts"
+
+npx ts-node "./puzzles/$1/$2/part-$3.ts"
