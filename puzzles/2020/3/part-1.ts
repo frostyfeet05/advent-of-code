@@ -1,4 +1,4 @@
-import {input, Toboggan} from './puzzle-shared';
+import {input, Toboggan} from './shared';
 
 const solve = (input: string): number => {
     const map = Toboggan.parse(input);

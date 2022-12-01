@@ -1,4 +1,4 @@
-import {input, PasswordWithPolicy, Policy} from './puzzle-shared';
+import {input, PasswordWithPolicy, Policy} from './shared';
 
 const isValid = (input: PasswordWithPolicy): boolean => {
     const amount = input.password

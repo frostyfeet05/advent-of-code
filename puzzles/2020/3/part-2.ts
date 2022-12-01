@@ -1,4 +1,4 @@
-import {input, Toboggan} from './puzzle-shared';
+import {input, Toboggan} from './shared';
 
 type Slope = { x: number, y?: number };
 
