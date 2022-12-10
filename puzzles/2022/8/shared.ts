@@ -22,7 +22,7 @@ export const Trees = {
         }
         return scores.reduce((max, score) => Math.max(max, score), 0);
     }
-}
+};
 
 const isVisible = (x: number, y: number, trees: Trees): boolean => {
     const width = trees[0].length;
@@ -44,7 +44,7 @@ const isVisible = (x: number, y: number, trees: Trees): boolean => {
     const bottom = column.slice(y + 1).every(tree => treeHeight > tree);
 
     return [left, right, top, bottom].filter(Boolean).length > 0;
-}
+};
 
 const calculateScenicScore = (x: number, y: number, trees: Trees): number => {
     // check column and row
@@ -61,9 +61,9 @@ const calculateScenicScore = (x: number, y: number, trees: Trees): number => {
         * lengthOfLineOfSight(treeHeight, right)
         * lengthOfLineOfSight(treeHeight, top)
         * lengthOfLineOfSight(treeHeight, bottom);
-}
+};
 
 const lengthOfLineOfSight = (maxTreeHeight: number, trees: number[]): number => {
     const index = trees.findIndex(tree => tree >= maxTreeHeight);
     return index === -1 ? trees.length : index + 1;
-}
+};
