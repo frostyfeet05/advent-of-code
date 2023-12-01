@@ -4,13 +4,13 @@ const solve = (input: string): number => {
   const lines = Puzzle.parse(input);
 
   const overlapping: { [key: string]: string } = {
-    oneight: "oneeight",
-    threeight: "threeeight",
-    fiveight: "fiveeight",
-    nineight: "nineeight",
-    twone: "twoone",
-    sevenine: "sevennine",
-    eightwo: "eighttwo",
+    oneight: "18",
+    threeight: "38",
+    fiveight: "58",
+    nineight: "98",
+    twone: "21",
+    sevenine: "79",
+    eightwo: "82",
   };
 
   const textToNumber: { [key: string]: string } = {
