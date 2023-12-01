@@ -1,12 +1,11 @@
-import {Puzzle, sample, input} from './shared';
+import {Graph, sample, input} from './shared';
 
 const solve = (input: string): number => {
-    const lines = Puzzle.parse(input);
-
-    return 0;
+    const graph = Graph.parse(input);
+    return Graph.findPath(graph);
 }
 
-const result = solve(sample);
+const result = solve(input);
 console.log(`Result is ${result}`);
 
 export {};

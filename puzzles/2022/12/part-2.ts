@@ -1,7 +1,7 @@
-import {Puzzle, sample, input} from './shared';
+import {Graph, sample, input} from './shared';
 
 const solve = (input: string): number => {
-    const lines = Puzzle.parse(input);
+    const lines = Graph.parse(input);
 
     return 0;
 }
