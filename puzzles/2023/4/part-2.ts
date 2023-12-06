@@ -1,28 +1,28 @@
-import { Puzzle, input } from './shared';
+import {Puzzle, input} from './shared';
 
 const solve = (input: string): number => {
-  const cards = Puzzle.parse(input);
+    const cards = Puzzle.parse(input);
 
-  const win = cards.map((card) => {
-    const wins = card.winningNumbers.filter((winning) => card.numbers.includes(winning)).length;
-    return {
-      cardNumber: card.cardNumber,
-      wins,
-      copies: 1,
-    };
-  });
+    const win = cards.map((card) => {
+        const wins = card.winningNumbers.filter((winning) => card.numbers.includes(winning)).length;
+        return {
+            cardNumber: card.cardNumber,
+            wins,
+            copies: 1,
+        };
+    });
 
-  win.forEach((card, index) => {
-    if (card.copies > 0) {
-      for (let x = 0; x < card.wins; x++) {
-        if (index + x + 1 < win.length) {
-          win[index + x + 1].copies += card.copies;
+    win.forEach((card, index) => {
+        if (card.copies > 0) {
+            for (let x = 0; x < card.wins; x++) {
+                if (index + x + 1 < win.length) {
+                    win[index + x + 1].copies += card.copies;
+                }
+            }
         }
-      }
-    }
-  });
+    });
 
-  return win.reduce((a, b) => a + b.copies, 0);
+    return win.reduce((a, b) => a + b.copies, 0);
 };
 
 const result = solve(input);
