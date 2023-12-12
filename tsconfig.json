@@ -5,6 +5,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@util/*": ["util/*"]
+    },
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   }
 }
