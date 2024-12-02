@@ -9,6 +9,8 @@ else
   cp "scripts/template-puzzle.txt" "puzzles/$1/$2/part-1.ts"
   cp "scripts/template-puzzle.txt" "puzzles/$1/$2/part-2.ts"
   cp "scripts/template-shared.txt" "puzzles/$1/$2/shared.ts"
+  cp "scripts/template-test.txt" "puzzles/$1/$2/part-1.spec.ts"
+  cp "scripts/template-test.txt" "puzzles/$1/$2/part-2.spec.ts"
 
   echo "Done! Good luck!"
   echo

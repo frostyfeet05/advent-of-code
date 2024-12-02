@@ -1,7 +1,7 @@
 import { Puzzle, input } from './shared';
-import { Vector2 } from '@util/vector';
-import { manhattanDistance, Matrix } from '@util/matrix';
-import { sum } from '@util/array';
+import { Vector2 } from '../../util/vector';
+import { manhattanDistance, Matrix } from '../../util/matrix';
+import { sum } from '../../util/array';
 
 const solve = (input: string): number => {
   let matrix = Puzzle.parse(input);

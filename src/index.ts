@@ -1,0 +1,1 @@
+console.log('Please run `npm run <year> <day> <part>` to execute a puzzle')
