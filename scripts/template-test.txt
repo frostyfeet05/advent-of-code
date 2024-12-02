@@ -1,10 +1,14 @@
 import { describe, expect, it } from 'bun:test';
-import { solve } from './part-1.ts';
+import { solve as solve1 } from './part-1.ts';
+import { solve as solve2 } from './part-2.ts';
 
 const sample = ``;
 
-describe('Year #year day #day part #part', () => {
-  it('should give the correct sample answer', () => {
-    expect(solve(sample)).toBe(0);
+describe('Year #year day #day', () => {
+  it('part 1 should give the correct sample answer', () => {
+    expect(solve1(sample)).toBe(0);
+  });
+  it('part 2 should give the correct sample answer', () => {
+    expect(solve2(sample)).toBe(0);
   });
 });
