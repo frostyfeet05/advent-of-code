@@ -1,6 +1,6 @@
-import { Puzzle, input, Game, Reveal } from './shared';
+import { Puzzle, type Game, type Reveal } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const games = Puzzle.parse(input);
 
   const powers = games.map(calculatePower);
@@ -21,8 +21,3 @@ const calculatePower = (game: Game): number => {
     }, {});
   return Object.values(cubes).reduce((a, b) => a * b);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

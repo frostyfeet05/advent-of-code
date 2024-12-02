@@ -1,6 +1,4 @@
-export const input = ``;
-
-export type Hand = {
+type Hand = {
   cards: string;
   bid: number;
   type: number;
@@ -19,6 +17,7 @@ export const Puzzle = {
         };
       })
       .sort((a, b) => compareHandType(a, b, withJoker)),
+  calculateRank: (hand: Hand, position: number): number => hand.bid * position,
 };
 
 const compareHandType = (first: Hand, second: Hand, withJoker: boolean): number => {

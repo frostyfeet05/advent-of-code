@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const races = Puzzle.parse(input);
 
   const records = races.map((race) => {
@@ -14,11 +14,5 @@ const solve = (input: string): number => {
     return recordDistances.length;
   });
 
-  console.log(races, records);
   return records.reduce((a, b) => a * b);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

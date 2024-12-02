@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Spring = {
   springs: string;
   groups: number[];

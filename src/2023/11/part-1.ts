@@ -1,9 +1,9 @@
-import { Puzzle, input } from './shared';
-import { Vector2 } from '../../util/vector';
-import { manhattanDistance, Matrix } from '../../util/matrix';
-import { sum } from '../../util/array';
+import { Puzzle } from './shared';
+import { type Vector2 } from '@util/vector.ts';
+import { manhattanDistance, Matrix } from '@util/matrix.ts';
+import { sum } from '@util/array.ts';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   let matrix = Puzzle.parse(input);
 
   // find empty rows and duplicate
@@ -48,8 +48,3 @@ const solve = (input: string): number => {
   const distances = pairs.map((pair) => manhattanDistance(pair[0], pair[1]));
   return sum(distances);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

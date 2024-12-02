@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const lines = Puzzle.parse(input);
 
   const overlapping: { [key: string]: string } = {
@@ -45,8 +45,3 @@ const solve = (input: string): number => {
 
   return numbersOnly.reduce((a, b) => a + b);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

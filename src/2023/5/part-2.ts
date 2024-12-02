@@ -1,7 +1,7 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
 // TODO this one is not optimised, but it works
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const almanac = Puzzle.parse(input);
 
   let counter = 0;
@@ -24,8 +24,3 @@ const solve = (input: string): number => {
 
   return lowest;
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

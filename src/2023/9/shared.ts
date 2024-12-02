@@ -1,5 +1,3 @@
-export const input = ``;
-
 type History = number[];
 
 export const Puzzle = {

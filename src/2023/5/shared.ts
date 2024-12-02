@@ -1,5 +1,3 @@
-export const input = ``;
-
 export type Map = {
   destRangeStart: number;
   srcRangeStart: number;

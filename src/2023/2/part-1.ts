@@ -1,6 +1,6 @@
-import { Puzzle, input, Game } from './shared';
+import { type Game, Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const games = Puzzle.parse(input);
 
   const gameConfig = {
@@ -12,11 +12,5 @@ const solve = (input: string): number => {
   const possibleGames = games.filter((g) =>
     g.rounds.every((r) => r.reveals.every((c) => gameConfig[c.cube] >= c.amount)),
   );
-  const sumOfGameIds = possibleGames.reduce((a: number, b: Game) => a + b.id, 0);
-  return sumOfGameIds;
+  return possibleGames.reduce((a: number, b: Game) => a + b.id, 0);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

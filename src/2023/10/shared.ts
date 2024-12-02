@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Point = {
   x: number;
   y: number;

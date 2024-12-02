@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Card = {
   cardNumber: number;
   winningNumbers: number[];

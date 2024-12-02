@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const { parts, symbols } = Puzzle.parse(input);
 
   const adjacentParts = symbols.flatMap((symbol) => {
@@ -10,8 +10,3 @@ const solve = (input: string): number => {
 
   return adjacentParts.reduce((a, b) => a + b.partNumber, 0);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

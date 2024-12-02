@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const { parts, symbols } = Puzzle.parse(input);
 
   const gears = symbols
@@ -12,8 +12,3 @@ const solve = (input: string): number => {
 
   return gears.map((part) => part.reduce((a, b) => a * b.partNumber, 1)).reduce((a, b) => a + b);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

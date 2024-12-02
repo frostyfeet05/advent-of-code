@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Race = {
   time: number;
   distance: number;

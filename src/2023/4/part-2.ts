@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const cards = Puzzle.parse(input);
 
   const win = cards.map((card) => {
@@ -24,8 +24,3 @@ const solve = (input: string): number => {
 
   return win.reduce((a, b) => a + b.copies, 0);
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

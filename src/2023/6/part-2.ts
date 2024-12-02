@@ -1,6 +1,6 @@
-import { Puzzle, input } from './shared';
+import { Puzzle } from './shared';
 
-const solve = (input: string): number => {
+export const solve = (input: string): number => {
   const race = Puzzle.parseSingleRace(input);
   const recordDistances = [];
   let hasRecord = false;
@@ -15,8 +15,3 @@ const solve = (input: string): number => {
   }
   return recordDistances.length;
 };
-
-const result = solve(input);
-console.log(`Result is ${result}`);
-
-export {};

@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Position = { x: number; y: number };
 type Part = {
   partNumber: number;

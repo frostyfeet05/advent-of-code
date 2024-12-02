@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Cube = 'red' | 'blue' | 'green';
 export type Reveal = { cube: Cube; amount: number };
 export type Round = { reveals: Reveal[] };

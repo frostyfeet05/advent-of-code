@@ -1,5 +1,3 @@
-export const input = ``;
-
 type Node = { [key: string]: string };
 type NodeMap = { [key: string]: Node };
 type Map = {
