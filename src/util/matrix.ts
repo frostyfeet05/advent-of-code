@@ -1,10 +1,13 @@
-import { Vector2 } from './vector';
+import type { Vector2 } from './vector';
 
 export type Matrix<T> = T[][];
 
 export const Matrix = {
-  fromString: <T>(input: string): Matrix<T> =>
-    input.split('\n').map((row) => row.split('').map((element) => element as T)),
+  fromString: (input: string, colSeparator = '', rowSeparator = '\n'): Matrix<string> =>
+    input.split(rowSeparator).map((row) => row.split(colSeparator).map((element) => element)),
+
+  toNumberMatrix: (input: string, colSeparator = '', rowSeparator = '\n'): Matrix<number> =>
+    input.split(rowSeparator).map((row) => row.split(colSeparator).map((element) => Number(element))),
 
   transpose: <T>(matrix: Matrix<T>): Matrix<T> => matrix[0].map((col, i) => matrix.map((row) => row[i])),
 };
