@@ -1,16 +1,29 @@
+//{
+//  "compilerOptions": {
+//    "target": "es2021",
+//    "module": "commonjs",
+//    "esModuleInterop": true,
+//    "forceConsistentCasingInFileNames": true,
+//    "strict": true,
+//    "skipLibCheck": true,
+//    "paths": {
+//      "@util/*": ["util/*"]
+//    },
+//  },
+//  "ts-node": {
+//    "require": ["tsconfig-paths/register"]
+//  }
+//}
 {
+  "extends": "./node_modules/@horus.dev/tsconfig/bun.json",
   "compilerOptions": {
-    "target": "es2021",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
+    "types": [
+      "bun-types" // add Bun global
+    ],
+    "baseUrl": "./",
     "paths": {
-      "@util/*": ["util/*"]
-    },
+      "@util/*": ["src/util/*"]
+    }
   },
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  "include": ["src"]
 }

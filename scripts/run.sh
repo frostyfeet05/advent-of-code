@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npx ts-node "./puzzles/$1/$2/part-$3.ts"
+bun run "./src/$1/$2/part-$3.ts"

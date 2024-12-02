@@ -1,4 +1,4 @@
-import { Matrix } from '@util/matrix';
+import { Matrix } from '../../util/matrix';
 
 export const input = ``;
 

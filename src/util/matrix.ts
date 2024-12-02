@@ -1,4 +1,4 @@
-import { Vector2 } from '@util/vector';
+import { Vector2 } from './vector';
 
 export type Matrix<T> = T[][];
 
